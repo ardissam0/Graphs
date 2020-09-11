@@ -29,25 +29,26 @@ player = Player(world.starting_room)
 # traversal_path = ['n', 'n']
 traversal_path = []
 
-#reverse the direction
+#reverse the direction with dicti
 oposite_directions = {'n': 's', 's': 'n', 'e': 'w', 'w': 'e'}
 
 
 # UPER:
-# set up directions for plater to follow
+# set up directions for player to follow
 # loop through all exits
-# set up visited rooms to turn around
+# set up visited rooms to turn around (create visited set)
 # if the room has not been visited then add to new path
 # update using recursion
 # return path
 # fill the traversal path with bfs function
 
+#create bfs function with starting and visited
 def bfs(starting_room, visited=set()):
     # track new path
     path =[]
 
     # loop through exits
-    # use get exits in room.py
+    # use get_exits in room.py
     for direction in player.current_room.get_exits():
         player.travel(direction)
         # if the player is in visited room
